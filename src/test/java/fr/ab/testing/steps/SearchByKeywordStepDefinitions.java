@@ -3,26 +3,26 @@ package fr.ab.testing.steps;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import fr.ab.testing.steps.serenity.GoogleStep;
+import fr.ab.testing.steps.serenity.AmazonStep;
 import net.thucydides.core.annotations.Steps;
 
 public class SearchByKeywordStepDefinitions {
 	
     @Steps
-    GoogleStep googleStep;
+    AmazonStep amazonStep;
 
-    @Given("I have been connected on google")
+    @Given("I have been connected on amazon")
     public void buyerWantsToBuy() {
-    	googleStep.openGoogleHome();
+    	amazonStep.openAmazonHome();
     }
 
     @When("I search '(.*)'")
     public void searchByKeyword(String keyword) {
-    	googleStep.searches_for_items(keyword);
+    	amazonStep.searches_for_items(keyword);
     }
 
-    @Then("I should only see items containing '(.*)'")
+    @Then("Le site devrait nous proposer '(.*)'")
     public void resultsForACategoryAndKeywordInARegion(String keyword) {
-    	googleStep.should_see_items_related_to(keyword);
+    	amazonStep.should_see_items_related_to(keyword);
     }
 }

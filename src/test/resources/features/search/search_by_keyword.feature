@@ -4,11 +4,11 @@ Feature: Some terse yet descriptive text of what is desired
   I want to gain some beneficial outcome which furthers the goal
 
   Scenario Outline: Search google
-    Given I have been connected on google
+    Given I have been connected on amazon
     When I search '<keyword>'
-	Then I should only see items containing '<keyword>'
+	Then Le site devrait nous proposer '<proposition>'
     
   Examples:
-    | keyword |
-    |  patateDouce |
-    | general  |
+    | keyword | proposition |
+    |  bote | botte | 
+    | patte  | pate |
