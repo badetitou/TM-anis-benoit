@@ -11,12 +11,12 @@ public class SearchByKeywordStepDefinitions {
     @Steps
     AmazonStep amazonStep;
 
-    @Given("I have been connected on amazon")
+    @Given("J'arrive sur amazon")
     public void buyerWantsToBuy() {
     	amazonStep.openAmazonHome();
     }
 
-    @When("I search '(.*)'")
+    @When("Je cherche '(.*)'")
     public void searchByKeyword(String keyword) {
     	amazonStep.searches_for_items(keyword);
     }
