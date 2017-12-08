@@ -7,14 +7,14 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.DefaultUrl;
 
-@DefaultUrl("https://amazon;fr")
+@DefaultUrl("https://wwww.amazon.fr")
 public class HomePage extends PageObject {
 	
 	@FindBy(id="#twotabsearchtextbox")
     private WebElement searchBar;
 	
 	public HomePage(WebDriver driver) {
-	        super(driver);
+		super(driver);
 	}
 	
 	public void recherche(String keyword){

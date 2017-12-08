@@ -1,6 +1,6 @@
 Feature: En tant que client
-Je souhaite pouvoir me connecter
-Afin d'avoir accès à mon compte 
+  Je souhaite pouvoir me connecter
+  Afin d'avoir accès à mon compte 
 
   Scenario Outline: Se connecter à mon compte
   	Given L'utilisateur est sur la page home d'amazon
