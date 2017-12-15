@@ -31,12 +31,5 @@ public class ConnexionStep {
 	    return loginPage.getErrorMessage();
     }
 
-    public void changeLangueAustralie() {
-	    homePage.changeLangueAustralie();
-    }
-
-    public void changeLangueBresil() {
-        homePage.changeLangueBresil();
-    }
 }
 

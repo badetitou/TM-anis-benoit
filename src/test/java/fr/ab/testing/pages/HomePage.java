@@ -23,6 +23,9 @@ public class HomePage extends PageObject {
 
     @FindBy(css="#navFooter > div:nth-child(5) > ul > li:nth-child(3) > a")
     private WebElement buttonLangueBresil;
+
+    @FindBy(css="#nav-your-amazon")
+    private WebElement textLangue;
 	
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -35,5 +38,10 @@ public class HomePage extends PageObject {
     public void changeLangueAustralie() {
         buttonLangueAustralie.click();
     }
+
+    public String getLangueText(){
+	    return textLangue.getText();
+    }
+
 }
 
