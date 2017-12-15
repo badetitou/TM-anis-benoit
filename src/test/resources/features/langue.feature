@@ -5,9 +5,9 @@ Feature: En tant que client
   Scenario Outline: Changer la langue
     Given L'utilisateur est sur la page home d'amazon
     When L'utilisateur clique sur <langue>
-    Then L'utilisateur a changé de langue la page Home
+    Then La page home est en <langue>
 
     Examples:
       | langue |
       | Australie|
-      | Brésil|
+      | Bresil|

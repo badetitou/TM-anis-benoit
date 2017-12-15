@@ -59,6 +59,7 @@
                 <configuration>
                     <includes>
                         <include>**/*Connexion.java</include>
+                        <include>**/*Langue.java</include>
                     </includes>
                     <systemProperties>
                         <webdriver.driver>${webdriver.driver}</webdriver.driver>

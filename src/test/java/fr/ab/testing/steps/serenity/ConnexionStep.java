@@ -3,7 +3,7 @@ package fr.ab.testing.steps.serenity;
 import fr.ab.testing.pages.HomePage;
 import fr.ab.testing.pages.LoginPage;
 
-public class AmazonStep {
+public class ConnexionStep {
 
 	HomePage homePage;
 
@@ -31,5 +31,12 @@ public class AmazonStep {
 	    return loginPage.getErrorMessage();
     }
 
+    public void changeLangueAustralie() {
+	    homePage.changeLangueAustralie();
+    }
+
+    public void changeLangueBresil() {
+        homePage.changeLangueBresil();
+    }
 }
 

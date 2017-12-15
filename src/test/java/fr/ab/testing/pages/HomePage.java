@@ -15,12 +15,25 @@ public class HomePage extends PageObject {
 	@Managed
 	private  WebDriver driver;
 
-	@FindBy(id="#twotabsearchtextbox")
+	@FindBy(css="#twotabsearchtextbox")
     private WebElement searchBar;
+
+	@FindBy(css="#navFooter > div:nth-child(5) > ul > li.nav_first > a")
+	private WebElement buttonLangueAustralie;
+
+    @FindBy(css="#navFooter > div:nth-child(5) > ul > li:nth-child(3) > a")
+    private WebElement buttonLangueBresil;
 	
 	public HomePage(WebDriver driver) {
 		super(driver);
 	}
-	
+
+    public void changeLangueBresil() {
+        buttonLangueBresil.click();
+    }
+
+    public void changeLangueAustralie() {
+        buttonLangueAustralie.click();
+    }
 }
 

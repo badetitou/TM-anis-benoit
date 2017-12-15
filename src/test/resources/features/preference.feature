@@ -3,6 +3,7 @@ je souhaite controler mes informations personnelles
 afin de parametrer mes preferences
 
   Scenario Outline: Modification de mes preferences de communication de courriers promotionnels
-    Given L'utilisateur est sur la page home d'amazon
-    When L'utilisateur recherche le produit produit
-    Then L'utilisateur est sur la page du produit
+    Given L'utilisateur est sur la Preference courriers
+    When L'utilisateur switch vers Ne m'envoyez pas de courriers promotionnels
+    And L'utilisateur valide son choix
+    Then Un message Vos préférences ont été enregistrees s'affiche
