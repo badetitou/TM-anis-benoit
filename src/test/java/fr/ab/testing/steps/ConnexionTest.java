@@ -33,7 +33,7 @@ public class ConnexionTest {
         amazonStep.openLoginPage();
     }
 
-    @When("L'utilisateur rentre son '(.*)' et son '(.*)'")
+    @When("^L'utilisateur rentre son (.*) et son (.*)$")
     public void lUtilisateurRentreSonEmailEtSonPassword(String email, String password) throws Throwable {
         amazonStep.login(email, password);
     }

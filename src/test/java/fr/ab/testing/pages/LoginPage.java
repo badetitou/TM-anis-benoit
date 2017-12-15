@@ -14,16 +14,16 @@ public class LoginPage extends PageObject {
 	@Managed
 	private  WebDriver driver;
 
-	@FindBy(id="#ap_email")
+	@FindBy(css="#ap_email")
 	private WebElement loginText;
 
-    @FindBy(id="#ap_password")
+    @FindBy(css="#ap_password")
     private WebElement loginPassword;
 
-    @FindBy(id="#signInSubmit")
+    @FindBy(css="#signInSubmit")
     private WebElement submitButton;
 
-    @FindBy(id="#auth-error-message-box > div > div > ul > li > span")
+    @FindBy(css="#auth-error-message-box > div > div > ul > li > span")
     private WebElement errorMessage;
 
 

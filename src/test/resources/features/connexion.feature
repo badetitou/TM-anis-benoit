@@ -5,7 +5,7 @@ Feature: En tant que client
   Scenario Outline: Se connecter à mon compte
   	Given L'utilisateur est sur la page home d'amazon
 	When l'utilisateur va sur la page login
-    And L'utilisateur rentre son "<email>" et son "<password>"
+    And L'utilisateur rentre son <email> et son <password>
 	Then L'utilisateur est connecté
     
   Examples:
@@ -15,7 +15,7 @@ Feature: En tant que client
   Scenario Outline: Se connecter à mon compte avec un mauvais mot de passe
   	Given L'utilisateur est sur la page home d'amazon
 	When l'utilisateur va sur la page login
-	And L'utilisateur rentre son "<email>" et son "<password>"
+	And L'utilisateur rentre son <email> et son <password>
 	Then Le message d'erreur de mauvais mot de passe s'affiche
     
   Examples:
@@ -25,7 +25,7 @@ Feature: En tant que client
   Scenario Outline: Se connecter à mon compte avec un mauvais identifiant
     Given L'utilisateur est sur la page home d'amazon
     When l'utilisateur va sur la page login
-    And L'utilisateur rentre son "<email>" et son "<password>"
+    And L'utilisateur rentre son <email> et son <password>
     Then Le message d'erreur d'indentifiant s'affiche
 
     Examples:
