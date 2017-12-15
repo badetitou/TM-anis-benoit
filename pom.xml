@@ -62,7 +62,7 @@
                     </includes>
                     <systemProperties>
                         <webdriver.driver>${webdriver.driver}</webdriver.driver>
-                        <webdriver.chrome.driver>driver/chromedriver</webdriver.chrome.driver>
+                        <webdriver.chrome.driver>driver/chromedriver24</webdriver.chrome.driver>
                     </systemProperties>
                 </configuration>
             </plugin>
