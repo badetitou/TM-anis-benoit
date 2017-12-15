@@ -1,16 +1,16 @@
 package fr.ab.testing.steps;
 
 import cucumber.api.PendingException;
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import fr.ab.testing.steps.serenity.AmazonStep;
 import net.thucydides.core.annotations.Steps;
 
-import java.util.concurrent.TimeUnit;
+import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertTrue;
 
-public class ConnexionStep {
+public class ConnexionTest {
 
 
 	@Steps
@@ -23,7 +23,8 @@ public class ConnexionStep {
 
     
     @Then("L'utilisateur est connecté")
-    public void resultsForACategoryAndKeywordInARegion(String keyword) {
+    public void userConnected() {
+        assertTrue(true);
     //	amazonStep.should_see_items_related_to(keyword);
     }
 
@@ -32,10 +33,9 @@ public class ConnexionStep {
         amazonStep.openLoginPage();
     }
 
-    @And("^L'utilisateur rentre son \"(.+)\" et son \"(.+)\"$")
+    @When("L'utilisateur rentre son '(.*)' et son '(.*)'")
     public void lUtilisateurRentreSonEmailEtSonPassword(String email, String password) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-       // throw new PendingException();
+        amazonStep.login(email, password);
     }
 
     @Then("^Un message d'erreur s'affiche$")
@@ -56,4 +56,15 @@ public class ConnexionStep {
         throw new PendingException();
     }
 
+    @Then("^Le message d'erreur de mauvais mot de passe s'affiche$")
+    public void leMessageDErreurDeMauvaisMotDePasseSAffiche() throws Throwable {
+        assertEquals(amazonStep.getPasswordErrorMessage(),"Votre mot de passe est incorrect");
+
+    }
+
+
+    @Then("^Le message d'erreur d'indentifiant s'affiche$")
+    public void leMessageDErreurDIndentifiantSAffiche() throws Throwable {
+        assertEquals(amazonStep.getLoginErrorMessage(),"Impossible de trouver un compte correspondant à cette adresse e-mail");
+    }
 }

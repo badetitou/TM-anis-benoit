@@ -1,12 +1,7 @@
 package fr.ab.testing.steps.serenity;
 
-import fr.ab.testing.pages.LoginPage;
-import org.openqa.selenium.WebDriver;
-
 import fr.ab.testing.pages.HomePage;
-import net.thucydides.core.annotations.Managed;
-
-import java.util.concurrent.TimeUnit;
+import fr.ab.testing.pages.LoginPage;
 
 public class AmazonStep {
 
@@ -18,16 +13,23 @@ public class AmazonStep {
         homePage.open();
     }
 
-	public void searches_for_items(String keyword) {
-		//
-    }
-
-	public void should_see_items_related_to(String proposition) {
-		//
+    public void login(String username, String password){
+		loginPage.enterEmail(username);
+		loginPage.enterPassword(password);
+		loginPage.validate();
 	}
 
     public void openLoginPage() {
 	    loginPage.open();
     }
+
+    public String getLoginErrorMessage(){
+	    return loginPage.getErrorMessage();
+    }
+
+    public String getPasswordErrorMessage(){
+	    return loginPage.getErrorMessage();
+    }
+
 }
 
