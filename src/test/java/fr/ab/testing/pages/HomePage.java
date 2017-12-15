@@ -26,6 +26,12 @@ public class HomePage extends PageObject {
 
     @FindBy(css="#nav-your-amazon")
     private WebElement textLangue;
+
+    @FindBy(css="#nav-link-yourAccount > span.nav-line-1")
+    private WebElement textLoggedName;
+
+    @FindBy(css="#nav-item-signout > span")
+    private WebElement deconnection;
 	
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -41,6 +47,14 @@ public class HomePage extends PageObject {
 
     public String getLangueText(){
 	    return textLangue.getText();
+    }
+
+    public String getLoggedText(){
+        return textLoggedName.getText();
+    }
+
+    public void logout(){
+	    deconnection.click();
     }
 
 }

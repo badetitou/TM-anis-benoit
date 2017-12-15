@@ -1,6 +1,5 @@
 package fr.ab.testing.steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -8,41 +7,22 @@ import fr.ab.testing.steps.serenity.ConnexionStep;
 import net.thucydides.core.annotations.Steps;
 
 import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertTrue;
 
 public class ConnexionFixture {
 
 	@Steps
     ConnexionStep connexionStep;
     
-    @Then("L'utilisateur est connecté")
+    @Given("L'utilisateur est connecte")
     public void userConnected() {
-        assertTrue(true);
-    //	amazonStep.should_see_items_related_to(keyword);
+        connexionStep.openLoginPage();
+        connexionStep.login("benoit.verhaeghe@polytlille.net", "tmtmtm");
     }
 
 
     @When("^L'utilisateur rentre son (.*) et son (.*)$")
     public void lUtilisateurRentreSonEmailEtSonPassword(String email, String password) throws Throwable {
         connexionStep.login(email, password);
-    }
-
-    @Then("^Un message d'erreur s'affiche$")
-    public void unMessageDErreurSAffiche() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
-
-    @When("^l'utilisateur clique sur se deconnecter$")
-    public void lUtilisateurCliqueSurSeDeconnecter() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
-
-    @Then("^L'utilisateur est déconnecté$")
-    public void lUtilisateurEstDéconnecté() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
     }
 
     @Then("^Le message d'erreur de mauvais mot de passe s'affiche$")
@@ -61,5 +41,20 @@ public class ConnexionFixture {
     public void lUtilisateurEstSurLaPageLogin() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         connexionStep.openLoginPage();
+    }
+
+    @Then("^L'utilisateur est bien connecte$")
+    public void lUtilisateurEstBienConnecte() throws Throwable {
+        assertEquals(connexionStep.getLoggedText(), "Bonjour tm");
+    }
+
+    @When("^l'utilisateur clique sur se deconnecter$")
+    public void lUtilisateurCliqueSurSeDeconnecter() throws Throwable {
+        connexionStep.logout();
+    }
+
+    @Then("^L'utilisateur est déconnecte$")
+    public void lUtilisateurEstDéconnecte() throws Throwable {
+        assertEquals(connexionStep.getLoggedText(), "Bonjour. Identifiez-vous");
     }
 }

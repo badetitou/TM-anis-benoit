@@ -5,7 +5,7 @@ Feature: En tant que client
   Scenario Outline: Se connecter à mon compte
     Given l'utilisateur est sur la page login
     And L'utilisateur rentre son <email> et son <password>
-	Then L'utilisateur est connecté
+	Then L'utilisateur est bien connecte
     
   Examples:
     | email | password |
@@ -31,9 +31,9 @@ Feature: En tant que client
 
   Scenario Outline: Se deconnecter
   	Given L'utilisateur est sur la page home d'amazon
-  	And L'utilisateur est connecté
+  	And L'utilisateur est connecte
 	When l'utilisateur clique sur se deconnecter
-	Then L'utilisateur est déconnecté
+	Then L'utilisateur est déconnecte
     Examples:
       |  |
 	

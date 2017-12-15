@@ -31,5 +31,11 @@ public class ConnexionStep {
 	    return loginPage.getErrorMessage();
     }
 
+    public String getLoggedText(){return homePage.getLoggedText();}
+
+    public void logout (){
+        homePage.logout();
+    }
+
 }
 
