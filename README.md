@@ -9,7 +9,7 @@ A cause de problèmes avec les machines de Polytech nous n'avons testé que sur 
 Les sources des tests sont dans le dossier src/test/\*.
 Les sources java dans src/test/java/\* et les sources des features dans src/test/resources/\*.
 
-Nous avons écrit les tests pour la connexion, la gestion d'une liste amazon, le changement de la langue, la gestion des preferences et la recherche d'un article.
+Nous avons écrit les tests pour la connexion, la gestion d'une liste amazon, le changement de la langue, la gestion des préferences et la recherche d'un article.
 
 Seul le code java pour la connexion, la langue et le début de la recherche d'article a été écrit. 
 
